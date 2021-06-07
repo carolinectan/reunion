@@ -27,7 +27,7 @@ RSpec.describe Reunion do
     @activity_1 = Activity.new("Brunch")
     @activity_1.add_participant("Maria", 20)
     @activity_1.add_participant("Luther", 40)
-    @reunion.add_activity(activity_1)
+    @reunion.add_activity(@activity_1)
 
     expect(@reunion.total_cost).to eq(60)
 
@@ -48,7 +48,8 @@ RSpec.describe Reunion do
 
     expect(@reunion.summary).to eq("Maria: -10\nLuther: -30\nLouis: 40")
 
-    expect(puts @reunion.summary).to eq("Maria: -10
+    expect(puts @reunion.summary).to eq(
+      "Maria: -10
       Luther: -30
       Louis: 40")
   end
